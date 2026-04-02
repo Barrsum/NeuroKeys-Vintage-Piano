@@ -12,8 +12,8 @@ The twist? **✨ Magic Mode**. Turn it on, select a masterpiece (like *Interstel
 
 ## Screenshots
 
-![Project Screenshot](/public/home-01.png) 
-![Project Screenshot](/public/home-02.png) 
+![Project Screenshot](/home-01.png) 
+![Project Screenshot](/home-02.png) 
 
 
 ## ✨ Features
