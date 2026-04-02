@@ -4,7 +4,7 @@
 
 **Day 03 / 30 - April Vibe Coding Challenge**
 
-## Try the live demo - [Demo](https://neurokeys-your-link.vercel.app)
+## Try the live demo - [Demo](https://neuro-keys-vintage-piano.vercel.app/)
 
 NeuroKeys is a premium, interactive web piano built entirely in Vanilla HTML/CSS/JS. Wrapped in a stunning "Analog Amber" vintage hardware aesthetic, it features an advanced multi-instrument audio engine powered by Tone.js.
 
