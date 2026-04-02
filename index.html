@@ -1,0 +1,111 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NeuroKeys - Vintage Amber</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Inter:wght@300;500;700&family=Space+Mono&display=swap" rel="stylesheet">
+    
+    <!-- Fix for SVG Icon -->
+    <link rel="icon" type="image/svg+xml" href="public/logo.svg">
+    <link rel="alternate icon" href="public/logo.svg">
+    
+    <!-- Tone.js Library -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/tone/14.8.49/Tone.js"></script>
+</head>
+<body>
+
+    <div class="app-layout">
+        
+        <!-- HEADER -->
+        <header class="app-header">
+            <div>
+                <div class="logo">NeuroKeys V3</div>
+                <div class="tagline">Interactive Piano & Magic Engine</div>
+            </div>
+            <div class="mapping-indicator" id="mappingIndicator">Current Map: <code>A</code> = C4</div>
+        </header>
+
+        <!-- CONTROLS & MAGIC MODE -->
+        <section class="controls-panel">
+            <div class="standard-controls">
+                <div class="control-group">
+                    <label>Sound Engine</label>
+                    <select id="instrumentSelect">
+                        <option value="piano" selected>Salamander Grand Piano</option>
+                        <option value="synth">Warm PolySynth</option>
+                        <option value="epiano">Electric Piano</option>
+                        <option value="organ">Vintage Organ</option>
+                        <option value="pluck">Plucked String</option>
+                        <option value="lead">Synth Lead</option>
+                        <option value="bells">Glockenspiel</option>
+                        <option value="drum">Drum Hit</option>
+                    </select>
+                </div>
+                <div class="control-group">
+                    <label>Master Volume: <span id="volumeValue">+6 dB</span></label>
+                    <input type="range" id="volumeSlider" min="-30" max="12" step="1" value="6">
+                </div>
+                <div class="control-group" style="justify-content: center;">
+                    <span id="loadingIndicator" class="loading-text">Loading Audio Engine...</span>
+                </div>
+            </div>
+
+            <div class="magic-panel">
+                <div class="toggle-wrapper">
+                    <label class="switch">
+                        <input type="checkbox" id="magicToggle">
+                        <span class="slider"></span>
+                    </label>
+                    <span class="magic-label">✨ Magic Mode</span>
+                </div>
+                
+                <!-- This div is Hidden by default via inline style -->
+                <div id="magicControls" class="magic-controls" style="display: none;">
+                    <div class="control-group magic-select-group">
+                        <label class="magic-sub">Select Masterpiece</label>
+                        <select id="songSelect">
+                            <option value="">-- Choose a track --</option>
+                            <!-- Populated dynamically from songs.js -->
+                        </select>
+                    </div>
+                    <div class="magic-status">
+                        <div class="progress-box" id="magicProgress"><span class="current">0</span> / 0</div>
+                        <div style="display: flex; gap: 10px; margin-top: 5px;">
+                            <button id="magicAutoplay" class="magic-btn autoplay-btn">▶ Autoplay</button>
+                            <button id="magicReset" class="magic-btn">Reset</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- FULL PIANO CONTAINER -->
+        <section class="piano-wrapper">
+            <div id="piano-container">
+                <div id="piano">
+                    <!-- JS will generate keys here -->
+                </div>
+            </div>
+        </section>
+
+        <!-- FOOTER -->
+        <footer class="app-footer">
+            <div class="creator">Engineered & Designed by <strong>Ram Bapat</strong></div>
+            <div class="socials">
+                <a href="https://github.com/Barrsum/NeuroKeys-Vintage-Piano.git">Open Source Code</a>
+                <a href="https://www.linkedin.com/in/ram-bapat-barrsum-diamos">Connect on LinkedIn</a>
+            </div>
+        </footer>
+
+    </div>
+
+    <!-- Application Logic -->
+    <script src="audio.js"></script>
+    <script src="piano.js"></script>
+    <script src="songs.js"></script>
+    <script src="magic.js"></script>
+</body>
+</html>
